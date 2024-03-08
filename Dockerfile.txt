@@ -2,16 +2,22 @@ FROM ubuntu:latest
 
 MAINTAINER NewstarCorporation
 
-COPY files /var/www/html/
+WORKDIR /usr/share/nginx/html
 
-COPY img  /var/www/html/
+COPY files /usr/share/nginx/html
 
-COPY ic.png /var/www/html/
+COPY img  /usr/share/nginx/html
 
-COPY index.html /var/www/html/
+COPY ic.png /usr/share/nginx/html
+
+COPY index.html /usr/share/nginx/html
 
 RUN apt-get update
 
-CMD ["apach2" "start"]
+CMD ["/bin/sh"]
+
+CMD ["nginx" "-g" "daemon]
+
+ENTRYPOINT ["nginx" "-g" "daemon]
 
 EXPOSE 80
