@@ -4,8 +4,6 @@ MAINTAINER NewstarCorporation
 
 RUN apt install apache2
 
-RUN yum -y install httpd
-
 COPY files /var/www/html/
 
 COPY img  /var/www/html/
