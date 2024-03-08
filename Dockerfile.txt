@@ -12,6 +12,8 @@ COPY index.html /var/www/html/
 
 RUN apt-get update
 
+RUN apt-get install apache2
+
 CMD ["apach2" "start"]
 
 EXPOSE 80
