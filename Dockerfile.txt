@@ -1,0 +1,19 @@
+FROM centos:latest
+
+MAINTAINER NewstarCorporation
+
+RUN apt install apache2
+
+RUN yum -y install httpd
+
+COPY files /var/www/html/
+
+COPY img  /var/www/html/
+
+COPY ic.png /var/www/html/
+
+COPY index.html /var/www/html/
+
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+
+EXPOSE 80
