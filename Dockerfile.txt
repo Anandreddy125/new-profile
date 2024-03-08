@@ -10,7 +10,7 @@ COPY ic.png /var/www/html/
 
 COPY index.html /var/www/html/
 
-RUN /bin/sh -c  apt-get install -y apache2
+RUN apt-get update
 
 CMD ["apach2" "start"]
 
