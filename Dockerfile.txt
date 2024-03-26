@@ -1,23 +1,5 @@
-FROM ubuntu:latest
+FROM nginx
 
-MAINTAINER NewstarCorporation
+COPY . /usr/share/nginx/html
 
-WORKDIR /usr/share/nginx/html
-
-COPY files /usr/share/nginx/html
-
-COPY img  /usr/share/nginx/html
-
-COPY ic.png /usr/share/nginx/html
-
-COPY index.html /usr/share/nginx/html
-
-RUN apt-get update
-
-CMD ["/bin/sh"]
-
-CMD ["nginx" "-g" "daemon]
-
-ENTRYPOINT ["nginx" "-g" "daemon]
-
-EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
